@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBSITE</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/be2e30ec66.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   <div id="header">
+    <div class="container">
+        <nav>
+         <img src="images/44.jpg" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header" >Home</a></li>
+                <li><a href="#about" >About</a></li>
+                <li><a href="#services" >Services</a></li>
+                <li><a href="#portfolio" >Protfolio</a></li>
+                <li><a href="#contact" >Contact Us</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text"> 
+            <p>Project Development and Training</p>
+            <h1>ENCODING INSIGHT SOLUTION...</h1>        
+        </div>
+    </div>
+    </div>
+    <div id ="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/aboutus.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Us </h1>
+            <p> Encode data Expert IT Servics AI,MI,Data Sciences,Full Stack development</p>
+            <p>The process of transforming raw data into a structured format suitable for analysis <br>and processing by machine learning algorithms, often involving techniques like data cleaning, normalization, feature engineering, and encoding categorical variables to numerical representations, allowing the AI models to effectively learn patterns and make predictions based on the data.</p>
+        </div>
+        </div>
+        </div>
+    </div>
+    <div id="services">
+    <div class="container">
+        <h1 class="sub-title">Our Services</h1>
+        <div class="services-list">
+<div> 
+    <i class="fa-solid fa-code"></i>
+    <h2>WEB DESIGNING</h2>
+    <p>Responsive web design is an approach which demonstrates that the web design and web development should respond to the user’s environment and actions supported by the display size, orientation, and platform.</p>
+    <a href="#">Learn More</a>
+</div>
+<div> 
+    <i class="fa-solid fa-crop"></i>
+    <h2>Mobile App Development</h2>
+    <p>Having an Android application developed gives your customers and employee easy access to your business and in return gives you the huge profit.</p>
+    <a href="#">Learn More</a>
+</div>
+<div> 
+    <i class="fa-brands fa-app-store-ios"></i>
+    <h2>Python Projects</h2>
+    <p>Final year project for Computer Science Engineering and Information Science Science Engineering. All the projects according to industy standards.</p>
+    <a href="#">Learn More</a>
+</div>
+        </div>
+       </div>
+        </div>
+        <div id="portfolio">    
+            <div class="container">
+                <h1 class="sub-title"> portfolio</h1>
+                <div class="work-list">
+                    <div class="work">
+                        <img src="images/3.jpeg" >
+                        <div class="layer">
+                            <h3>Project Implementation</h3>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="images/7.jpeg" >
+                        <div class="layer">
+                            <h3>full stack development with Python</h3>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="images/2.webp" >
+                        <div class="layer">
+                            <h3>mobile and Android application Development</h3>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn">see more</a>
+            </div>
+        </div>
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">         
+                    <h1 class="sub-title">Contact Us</h1>
+                    <P><i class="fa-solid fa-paper-plane"></i>
+                        contactexample@gmail.com</P>
+                    <P><i class="fa-solid fa-square-phone"></i>
+                        0123456789</P>
+                    <div class="social-icon">
+                        <a href="https://facebook,com/"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter-square"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+
+                    </div>
+                    <div class="contact-right">
+                        <form name="submit-to-google-sheet">
+                            <input type="text" name="Name"placeholder="Your Name" required>
+                            <input type="email" name="Email"placeholder="Your Email" required>
+                            <textarea  name="Message" rows="6"placeholder="Your Message"></textarea>
+                            <button type="submit"class="btn btn2">Submit</button>
+                        </form>
+<span id="msg"></span>
+                    </div>
+                </div>
+                    </div>
+                </div>
+                
+
+                
+                    <script>
+                        var sidemenu = document.getElementById("sidemenu");
+                        function openmenu(){
+                            sidemenu.style.right = "0";
+                        }
+                        function closemenu(){
+                            sidemenu.style.right ="-200px";
+                        }
+                    </script>
+                    
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwZhEFb0f4oBWuBjjL9HEqz_2LWMYPuVW6GRKqjE1IDrUfDTw8sUQ1hK8PoPeUZAC8P/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById('msg')
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+         msg.innerHTML = "Successfully submitted"
+         setTimeout(function(){
+            msg.innerHTML = ""
+         }, 5000)
+         form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+                   
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/67a63fab825083258e11dd05/1ijgmhdr6';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+
+</html>
